@@ -1,6 +1,6 @@
-// @SOURCE:/Users/youssefamri/Documents/Zakaria/riseer/conf/routes
-// @HASH:b31e3ed4075748bc0576b3b7654b92b97f9d84ad
-// @DATE:Tue Feb 10 23:30:00 CET 2015
+// @SOURCE:/Users/galinaozkan/Documents/workspace/Riseer/conf/routes
+// @HASH:c9ffa68b0d23dfd5bc6bb8909d12bfd604d9c09a
+// @DATE:Sat Feb 21 13:42:32 CET 2015
 
 package controllers;
 

@@ -1,6 +1,6 @@
-// @SOURCE:/Users/youssefamri/Documents/Zakaria/riseer/conf/routes
-// @HASH:b31e3ed4075748bc0576b3b7654b92b97f9d84ad
-// @DATE:Tue Feb 10 23:30:00 CET 2015
+// @SOURCE:/Users/galinaozkan/Documents/workspace/Riseer/conf/routes
+// @HASH:c9ffa68b0d23dfd5bc6bb8909d12bfd604d9c09a
+// @DATE:Sat Feb 21 13:42:32 CET 2015
 
 
 import play.core._
@@ -32,20 +32,20 @@ def prefix = _prefix
 lazy val defaultPrefix = { if(Routes.prefix.endsWith("/")) "" else "/" }
 
 
-// @LINE:6
-private[this] lazy val controllers_Application_index0_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix))))
-private[this] lazy val controllers_Application_index0_invoker = createInvoker(
-controllers.Application.index(),
-HandlerDef(this.getClass.getClassLoader, "", "controllers.Application", "index", Nil,"GET", """ Home page""", Routes.prefix + """"""))
-        
-
-// @LINE:9
-private[this] lazy val controllers_Assets_at1_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
-private[this] lazy val controllers_Assets_at1_invoker = createInvoker(
+// @LINE:8
+private[this] lazy val controllers_Assets_at0_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
+private[this] lazy val controllers_Assets_at0_invoker = createInvoker(
 controllers.Assets.at(fakeValue[String], fakeValue[String]),
 HandlerDef(this.getClass.getClassLoader, "", "controllers.Assets", "at", Seq(classOf[String], classOf[String]),"GET", """ Map static resources from the /public folder to the /assets URL path""", Routes.prefix + """assets/$file<.+>"""))
         
-def documentation = List(("""GET""", prefix,"""controllers.Application.index()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
+
+// @LINE:10
+private[this] lazy val controllers_Application_getProfile1_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("profiles/"),DynamicPart("id", """[^/]+""",true))))
+private[this] lazy val controllers_Application_getProfile1_invoker = createInvoker(
+controllers.Application.getProfile(fakeValue[Long]),
+HandlerDef(this.getClass.getClassLoader, "", "controllers.Application", "getProfile", Seq(classOf[Long]),"GET", """""", Routes.prefix + """profiles/$id<[^/]+>"""))
+        
+def documentation = List(("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """profiles/$id<[^/]+>""","""controllers.Application.getProfile(id:Long)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
   case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
   case l => s ++ l.asInstanceOf[List[(String,String,String)]]
 }}
@@ -53,18 +53,18 @@ def documentation = List(("""GET""", prefix,"""controllers.Application.index()""
 
 def routes:PartialFunction[RequestHeader,Handler] = {
 
-// @LINE:6
-case controllers_Application_index0_route(params) => {
-   call { 
-        controllers_Application_index0_invoker.call(controllers.Application.index())
+// @LINE:8
+case controllers_Assets_at0_route(params) => {
+   call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
+        controllers_Assets_at0_invoker.call(controllers.Assets.at(path, file))
    }
 }
         
 
-// @LINE:9
-case controllers_Assets_at1_route(params) => {
-   call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
-        controllers_Assets_at1_invoker.call(controllers.Assets.at(path, file))
+// @LINE:10
+case controllers_Application_getProfile1_route(params) => {
+   call(params.fromPath[Long]("id", None)) { (id) =>
+        controllers_Application_getProfile1_invoker.call(controllers.Application.getProfile(id))
    }
 }
         
