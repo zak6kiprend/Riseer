@@ -1,6 +1,6 @@
-// @SOURCE:/Users/galinaozkan/Documents/workspace/Riseer/conf/routes
-// @HASH:c9ffa68b0d23dfd5bc6bb8909d12bfd604d9c09a
-// @DATE:Sat Feb 21 13:42:32 CET 2015
+// @SOURCE:C:/Users/S.Sinthu/Documents/GitHub/Riseer/conf/routes
+// @HASH:731f97d2adfc18ea6e958943065456af2e13f033
+// @DATE:Fri Mar 06 05:47:58 CET 2015
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -15,7 +15,6 @@ import _root_.play.libs.F
 import Router.queryString
 
 
-// @LINE:10
 // @LINE:8
 package controllers {
 
@@ -32,25 +31,10 @@ def at(file:String): Call = {
 
 }
                           
-
-// @LINE:10
-class ReverseApplication {
-
-
-// @LINE:10
-def getProfile(id:Long): Call = {
-   import ReverseRouteContext.empty
-   Call("GET", _prefix + { _defaultPrefix } + "profiles/" + implicitly[PathBindable[Long]].unbind("id", id))
-}
-                        
-
-}
-                          
 }
                   
 
 
-// @LINE:10
 // @LINE:8
 package controllers.javascript {
 import ReverseRouteContext.empty
@@ -72,29 +56,10 @@ def at : JavascriptReverseRoute = JavascriptReverseRoute(
 
 }
               
-
-// @LINE:10
-class ReverseApplication {
-
-
-// @LINE:10
-def getProfile : JavascriptReverseRoute = JavascriptReverseRoute(
-   "controllers.Application.getProfile",
-   """
-      function(id) {
-      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "profiles/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id)})
-      }
-   """
-)
-                        
-
-}
-              
 }
         
 
 
-// @LINE:10
 // @LINE:8
 package controllers.ref {
 
@@ -106,19 +71,6 @@ class ReverseAssets {
 // @LINE:8
 def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Assets.at(path, file), HandlerDef(this.getClass.getClassLoader, "", "controllers.Assets", "at", Seq(classOf[String], classOf[String]), "GET", """ Map static resources from the /public folder to the /assets URL path""", _prefix + """assets/$file<.+>""")
-)
-                      
-
-}
-                          
-
-// @LINE:10
-class ReverseApplication {
-
-
-// @LINE:10
-def getProfile(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Application.getProfile(id), HandlerDef(this.getClass.getClassLoader, "", "controllers.Application", "getProfile", Seq(classOf[Long]), "GET", """""", _prefix + """profiles/$id<[^/]+>""")
 )
                       
 

@@ -18,7 +18,7 @@ public class Recherche {
 	}
 	
 	/**
-	 * Affiche tous les résultats (Artistes, Albums, Tracks) de la recherche
+	 * Affiche tous les rï¿½sultats (Artistes, Albums, Tracks) de la recherche
 	 * @param chaine
 	 */
 	@SuppressWarnings("unchecked")
@@ -44,7 +44,7 @@ public class Recherche {
 				try {
 					sync.wait();
 					cpt++;
-					if(cpt==1) System.out.println("Ah, ça bouge ... 1 thread a fini !");
+					if(cpt==1) System.out.println("Ah,  bouge ... 1 thread a fini !");
 					else if (cpt==2) System.out.println("Ca bouge encore ... 2 threads ont finis !");
 				} catch (InterruptedException e) {
 					e.printStackTrace();
@@ -64,46 +64,46 @@ public class Recherche {
 		supprimerDoublons(resultats_Artiste, resultats_Album, resultats_Track, recales);
 		
 		System.out.println("\n===========\t============\t============");
-		System.out.println("\nRésultats pour artistes :");
+		System.out.println("\nRultats pour artistes :");
 		if(resultats_Artiste!= null && !resultats_Artiste.isEmpty()){
 			for(String str : resultats_Artiste){
 				if(str!=null) System.out.println("\t"+str);
 			}
 		} else {
-			System.out.println("\tAucun résultat");
+			System.out.println("\tAucun rsultat");
 		}
 		
-		System.out.println("\nRésultats pour albums :");
+		System.out.println("\nRsultats pour albums :");
 		if(resultats_Album!= null && !resultats_Album.isEmpty()){
 			for(String str : resultats_Album){
 				if(str!=null) System.out.println("\t"+str);
 			}
 		} else {
-			System.out.println("\tAucun résultat");
+			System.out.println("\tAucun rsultat");
 		}
 		
-		System.out.println("\nRésultats pour tracks :");
+		System.out.println("\nRsultats pour tracks :");
 		if(resultats_Track!= null && !resultats_Track.isEmpty()){
 			for(String str : resultats_Track){
 				if(str!=null) System.out.println("\t"+str);
 			}
 		} else {
-			System.out.println("\tAucun résultat");
+			System.out.println("\tAucun rsultat");
 		}
 		
 
 		System.out.println("\n===========\t============\t============");
-		System.out.println("\nListe des non-acceptés :");
+		System.out.println("\nListe des non-accepts :");
 		if(recales!= null && !recales.isEmpty()){
 			for(String str : recales){
 				if(str!=null) System.out.println("\t"+str);
 			}
 		} else {
-			System.out.println("\tAucun recalé !");
+			System.out.println("\tAucun recal !");
 		}
 		
 		System.out.println("\n============================================");
-		System.out.println("=====\t===> Recherche terminée <===\t====");
+		System.out.println("=====\t===> Recherche termine <===\t====");
     }
 
 	
@@ -118,7 +118,7 @@ public class Recherche {
 			String str_temp;
 			for(List<String> one_liste : listes){
 				
-				// inutile d'enlever des doublons si une liste ne contient que 0 ou 1 seul élément, ou est null.
+				// inutile d'enlever des doublons si une liste ne contient que 0 ou 1 seul ï¿½lï¿½ment, ou est null.
 				if(one_liste!=null && one_liste.size()>1){
 					
 						for(int i=0; i<one_liste.size(); i++){
@@ -129,7 +129,7 @@ public class Recherche {
 								one_liste.remove(str_temp);
 							}
 							
-							// remet l'élement à sa position d'origine
+							// remet l'ï¿½lement ï¿½ sa position d'origine
 							one_liste.add(i,str_temp);
 							
 						}

@@ -6,8 +6,8 @@
 		module="play-java_2.11"
 		revision="1.0-SNAPSHOT"
 		conf="provided"
-		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool, echo-trace-compile, echo-trace-test, echo-weave, echo-sigar"
-		date="20150221133912"/>
+		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool, fork-run, echo-trace-compile, echo-trace-test, echo-weave, echo-sigar"
+		date="20150306052908"/>
 	<dependencies>
 	</dependencies>
 </ivy-report>

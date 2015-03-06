@@ -69,6 +69,6 @@ public final class Similarite {
 	}
 
 	public static void printSimilarity(String s, String t) {
-		System.out.println("La similarité entre "+"\""+s+"\" et \""+t+"\""+" est de "+similarity(s, t)+"%");
+		System.out.println("La similarit entre "+"\""+s+"\" et \""+t+"\""+" est de "+similarity(s, t)+"%");
 	}
 }

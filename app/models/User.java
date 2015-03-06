@@ -1,4 +1,4 @@
-package models;
+package Rizeer;
 
 public class User extends Profil{
 

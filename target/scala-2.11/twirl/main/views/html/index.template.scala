@@ -45,10 +45,10 @@ Seq[Any](format.raw/*1.19*/("""
 }
               /*
                   -- GENERATED --
-                  DATE: Sat Feb 21 13:39:24 CET 2015
-                  SOURCE: /Users/galinaozkan/Documents/workspace/Riseer/app/views/index.scala.html
-                  HASH: 2525948bb0b9a19833e9b9027e706281dd6c624c
-                  MATRIX: 723->1|828->18|856->21|887->44|926->46|958->53|972->59|1025->92|1057->95
+                  DATE: Fri Mar 06 05:29:54 CET 2015
+                  SOURCE: C:/Users/S.Sinthu/Documents/GitHub/Riseer/app/views/index.scala.html
+                  HASH: 605e6cdfecebab24bb17d3e489b0562bafda5a2d
+                  MATRIX: 723->1|828->18|858->23|889->46|928->48|962->57|976->63|1029->96|1063->101
                   LINES: 26->1|29->1|31->3|31->3|31->3|33->5|33->5|33->5|35->7
                   -- GENERATED --
               */
